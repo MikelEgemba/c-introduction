@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instruktion</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-responsive.css">
+    <style>
+        .responsive-video {
+            width: 100%;
+            height: auto;
+            max-width: 800px;
+            display: block;
+            margin: 0 auto;
+            border-radius: 12px;
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="dropdown">
+                    <button class="dropdown-toggle">Instruktioner ▾</button>
+                    <ul class="dropdown-content">
+                        <li><a href="lesson1.html">Lektion 1</a></li>
+                        <li><a href="lesson2.html">Lektion 2</a></li>
+                        <li><a href="lesson3.html">Lektion 3</a></li>
+                        <li><a href="lesson4.html">Lektion 4</a></li>
+                        <li><a href="lesson5.html">Lektion 5</a></li>
+                        <li><a href="lesson6.html">Lektion 6</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html">Hem</a></li>
+                <li><a href="upphovsratt.html">Upphovsrätt</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggle = document.querySelector(".dropdown-toggle");
+            const dropdown = document.querySelector(".dropdown");
+
+            toggle.addEventListener("click", function (e) {
+                e.stopPropagation();
+                dropdown.classList.toggle("open");
+            });
+
+            // Stäng menyn om man klickar utanför
+            document.addEventListener("click", function () {
+                dropdown.classList.remove("open");
+            });
+        });
+    </script>
+
+    <main class="lesson-content meny-container">
+        <h1 class="text-grupp"><span style="color: #702670;">Lektion 6:</span> Arv och Polymorfism</h1>
+
+        <!-- Arv -->
+        <section class="lesson-section menu">
+            <h2>Arv</h2>
+            <p>Arv är en av grundprinciperna i objektorienterad programmering...</p>
+            <div class="menu67">
+                <div class="menu54">
+                    <h3>Grundläggande arv</h3>
+                    <pre><code>// Basklass
+public class Animal
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+
+    public Animal(string name, int age)
+    {
+        Name = name;
+        Age = age;
+    }
+
+    public virtual void MakeSound()
+    {
+        Console.WriteLine("Djuret gör ett ljud");
+    }
+
+    public void Sleep()
+    {
+        Console.WriteLine($"{Name} sover...");
+    }
+}
+
+// Härledd klass
+public class Dog : Animal
+{
+    public string Breed { get; set; }
+
+    public Dog(string name, int age, string breed) : base(name, age)
+    {
+        Breed = breed;
+    }
+
+    public override void MakeSound()
+    {
+        Console.WriteLine($"{Name} skäller: Voff voff!");
+    }
+
+    public void Fetch()
+    {
+        Console.WriteLine($"{Name} hämtar bollen!");
+    }
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Polymorfism -->
+        <section class="lesson-section menu">
+            <h2>Polymorfism</h2>
+            <p>Polymorfism låter dig behandla objekt av olika klasser på ett enhetligt sätt.</p>
+            <div class="menu67">
+                <div class="menu54">
+                    <h3>Exempel på polymorfism</h3>
+                    <pre><code>Animal myAnimal = new Animal("Djuret", 5);
+Dog myDog = new Dog("Fido", 3, "Golden Retriever");
+Cat myCat = new Cat("Whiskers", 2, true);
+
+myAnimal.MakeSound();
+myDog.MakeSound();
+myCat.MakeSound();
+
+Animal[] animals = new Animal[3];
+animals[0] = myAnimal;
+animals[1] = myDog;
+animals[2] = myCat;
+
+foreach (Animal animal in animals)
+{
+    animal.MakeSound();
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Abstrakta klasser -->
+        <section class="lesson-section menu">
+            <h2>Abstrakta klasser och metoder</h2>
+            <div class="menu67">
+                <div class="menu54">
+                    <h3>Exempel på abstrakt klass</h3>
+                    <pre><code>public abstract class Shape
+{
+    public string Color { get; set; }
+
+    public Shape(string color)
+    {
+        Color = color;
+    }
+
+    public abstract double CalculateArea();
+
+    public void DisplayColor()
+    {
+        Console.WriteLine($"Denna form är {Color}");
+    }
+}
+
+public class Circle : Shape
+{
+    public double Radius { get; set; }
+
+    public Circle(double radius, string color) : base(color)
+    {
+        Radius = radius;
+    }
+
+    public override double CalculateArea()
+    {
+        return Math.PI * Radius * Radius;
+    }
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gränssnitt -->
+        <section class="lesson-section menu">
+            <h2>Gränssnitt (Interfaces)</h2>
+            <div class="menu67">
+                <div class="menu54">
+                    <h3>Exempel på gränssnitt</h3>
+                    <pre><code>public interface IMovable
+{
+    void Move(double x, double y);
+    double Speed { get; set; }
+}
+
+public interface IDrawable
+{
+    void Draw();
+}
+
+public class Car : IMovable, IDrawable
+{
+    public double X { get; set; }
+    public double Y { get; set; }
+    public double Speed { get; set; }
+    public string Model { get; set; }
+
+    public Car(string model, double speed)
+    {
+        Model = model;
+        Speed = speed;
+        X = 0;
+        Y = 0;
+    }
+
+    public void Move(double x, double y)
+    {
+        X += x;
+        Y += y;
+        Console.WriteLine($"{Model} flyttar till position ({X}, {Y})");
+    }
+
+    public void Draw()
+    {
+        Console.WriteLine($"Ritar {Model} på position ({X}, {Y})");
+    }
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Uppgifter -->
+        <section class="lesson-section menu">
+            <h2>📝 Uppgifter: Arv och Polymorfism</h2>
+            <div class="menu67">
+                <div class="menu54">
+                    <h3>Uppgift 1: Skapa en hierarki av fordon</h3>
+                    <p>Skapa en abstrakt basklass <code>Vehicle</code> med egenskaper som <code>Make</code>, <code>Model</code> och <code>Year</code>. Lägg till en abstrakt metod <code>CalculateFuelEfficiency()</code>. Skapa sedan härledda klasser för <code>Car</code>, <code>Motorcycle</code> och <code>Truck</code>.</p>
+                </div>
+                <div class="menu54">
+                    <h3>Uppgift 2: Implementera gränssnitt</h3>
+                    <p>Skapa ett gränssnitt <code>IPlayable</code> med metoder som <code>Play()</code>, <code>Pause()</code> och <code>Stop()</code>. Implementera detta i <code>MusicPlayer</code>, <code>VideoPlayer</code> och <code>GameConsole</code>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video -->
+        <section class="lesson-section menu">
+            <h2>Instruktionsvideo</h2>
+            <div class="video-container">
+                <div class="video-placeholder" style="padding: 20px; background-color: #333; border-radius: 12px; text-align: center;">
+                    <video controls class="responsive-video">
+                        <source src="Skärminspelning_2025-05-17_131859.mp4" type="video/mp4">
+                        Din webbläsare stödjer inte videouppspelning.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <div class="navigation-buttons" style="display: flex; justify-content: space-between; margin-top: 40px;">
+            <a href="lesson5.html" class="nav-button menu">← Förra Lektion</a>
+            <a href="index.html" class="nav-button menu">Tillbaka till Hem</a>
+        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 20px; margin-top: 40px;">
+        <p>Skapad med ❤️ för att lära sig C#</p>
+        <p>© 2025 </p>
+    </footer>
+</body>
+</html>

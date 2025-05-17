@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Instruktion</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-responsive.css" />
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="dropdown">
+                    <button class="dropdown-toggle">Instruktioner ▾</button>
+                    <ul class="dropdown-content">
+                        <li><a href="lesson1.html">Lektion 1</a></li>
+                        <li><a href="lesson2.html">Lektion 2</a></li>
+                        <li><a href="lesson3.html">Lektion 3</a></li>
+                        <li><a href="lesson4.html">Lektion 4</a></li>
+                        <li><a href="lesson5.html">Lektion 5</a></li>
+                        <li><a href="lesson6.html">Lektion 6</a></li>
+                    </ul>
+                </li>
+                <li><a href="upphövsrätt.html">Upphovsrätt</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+        // Dropdown functionality (optional if you need to add JS)
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggle = document.querySelector(".dropdown-toggle");
+            const dropdown = document.querySelector(".dropdown");
+
+            toggle.addEventListener("click", function (e) {
+                e.stopPropagation();
+                dropdown.classList.toggle("open");
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener("click", function () {
+                dropdown.classList.remove("open");
+            });
+        });
+    </script>
+
+    <div class="container1">
+        <div>
+            <img src="c-sharp-1.png" alt="Logotyp för programmeringsspråket C#" class="foto" />
+        </div>
+        <div class="text-grupp">
+            <h1>Att lära sig C#</h1>
+            <h2>Gratis kurser, handledningar, videor och mer om att lära sig programmeringsspråket C#</h2>
+        </div>
+        <div class="menu-container">
+            <div class="menu meny1">
+                <img src="computer.png" alt="Ikon av en dator" class="foto3" />
+                <div class="text5">
+                    <h3>C# används ofta för att skapa kraftfulla och användarvänliga program för Windows, till exempel kalkylprogram, verktyg eller administrativa system.</h3>
+                </div>
+            </div>
+
+            <div class="menu meny2">
+                <img src="game-console.png" alt="Ikon av en spelkonsol" class="foto3" />
+                <div class="text6">
+                    <h3>C# är det främsta språket i spelmotorn Unity, vilket gör det perfekt för att skapa 2D- och 3D-spel – allt från mobilspel till stora datorspel.</h3>
+                </div>
+            </div>
+
+            <div class="menu meny4">
+                <img src="api.png" alt="Ikon som representerar API" class="foto3" />
+                <div class="text7">
+                    <h3>Med hjälp av .NET-ramverket kan C# användas för att bygga moderna, dynamiska webbapplikationer och API:er – perfekt för företag och startups.</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="text2">
+            <h1>Varför använder man denna hemsidan för att lära sig nya programmeringsspråk?</h1>
+        </div>
+
+        <div class="menu67">
+            <div class="menu77">
+                <div class="menu54">
+                    <img src="felipe.jpg" alt="Porträttbild av Felipe" class="avatar" />
+                    <h3>Jamaal.B och Abdi.S</h3>
+                    <h4>Studenter</h4>
+                    <p>"Att kunna gå kurser i vara egna takt har varit en fantastisk upplevelse. Vi kan lära oss när det passar oss bäst.
+                        Ärligt talat, vi hade krigat för det här."</p>
+                </div>
+
+                <div class="menu54">
+                    <img src="img2.jpg" alt="Porträttbild av Hugo A." class="avatar" />
+                    <h3>Hugo A.</h3>
+                    <h4>Student</h4>
+                    <p>"C# hjälpte mig att skapa mitt första spel i Unity – det var både roligt och utmanande.
+                        Jag kände mig som en riktig good boy varje gång koden faktiskt fungerade."</p>
+                </div>
+
+                <div class="menu54">
+                    <img src="img3.jpg" alt="Porträttbild av Jacob O." class="avatar" />
+                    <h3>Jacob O.</h3>
+                    <h4>Student</h4>
+                    <p>"Tydliga guider, enkla förklaringar. Rekommenderas starkt!"</p>
+                </div>
+
+                <!-- Add more cards as needed (up to 6) -->
+            </div>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 20px; margin-top: 40px;">
+        <p>Skapad med ❤️ för att lära sig C#</p>
+        <p>© 2025 </p>
+    </footer>
+</body>
+</html>

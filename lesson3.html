@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instruktion</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style-responsive.css" />
+  <style>
+    /* EXTRA RESPONSIVE TWEAKS */
+    .lesson-content {
+      padding: 20px;
+    }
+
+    h1, h2, h3, p {
+      word-wrap: break-word;
+    }
+
+    .menu54 pre {
+      overflow-x: auto;
+    }
+
+    @media (max-width: 450px) {
+      .nav-button {
+        font-size: 14px;
+        padding: 10px;
+      }
+
+      .menu77 {
+        flex-direction: column;
+      }
+
+      .menu54 {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      header h1 {
+        font-size: 1.3em;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-right: 0;
+      }
+
+      .navigation-buttons {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+    .responsive-video {
+      width: 100%;
+      height: auto;
+      max-width: 800px;
+      display: block;
+      margin: 0 auto;
+      border-radius: 12px;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li class="dropdown">
+          <button class="dropdown-toggle">Instruktioner ▾</button>
+          <ul class="dropdown-content">
+            <li><a href="lesson1.html">Lektion 1</a></li>
+            <li><a href="lesson2.html">Lektion 2</a></li>
+            <li><a href="lesson3.html">Lektion 3</a></li>
+            <li><a href="lesson4.html">Lektion 4</a></li>
+            <li><a href="lesson5.html">Lektion 5</a></li>
+            <li><a href="lesson6.html">Lektion 6</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html">Hem</a></li>
+        <li><a href="kurser.html">Upphovsrätt</a></li>
+        <li><a href="arbete.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggle = document.querySelector(".dropdown-toggle");
+      const dropdown = document.querySelector(".dropdown");
+
+      toggle.addEventListener("click", function (e) {
+        e.stopPropagation();
+        dropdown.classList.toggle("open");
+      });
+
+      // Stäng menyn om man klickar utanför
+      document.addEventListener("click", function () {
+        dropdown.classList.remove("open");
+      });
+    });
+  </script>
+
+  <main class="lesson-content meny-container">
+    <h1 class="text-grupp"><span style="color: #702670;">Lektion 3:</span> Villkor och If-satser</h1>
+
+    <section class="lesson-section menu">
+      <h2>Vad är ett villkor?</h2>
+      <p>Ett <strong>villkor</strong> (engelska: condition) är ett påstående som kan vara sant eller falskt. I programmering används villkor för att styra flödet i programmet – alltså vad som ska hända, och när det ska hända.</p>
+      <p>Med hjälp av en <code>if</code>-sats kan vi säga: <em>“Om detta är sant, gör så här. Annars, gör något annat.”</em></p>
+    </section>
+
+    <section class="lesson-section menu">
+      <h2>Så fungerar if-satser</h2>
+      <p>En enkel if-sats ser ut så här:</p>
+      <pre><code>int ålder = 18;
+
+if (ålder >= 18) {
+    Console.WriteLine("Du är myndig.");
+}</code></pre>
+      <p>Vill du att programmet ska göra något annat om villkoret inte stämmer, lägger du till <code>else</code>:</p>
+      <pre><code>if (ålder >= 18) {
+    Console.WriteLine("Du är myndig.");
+} else {
+    Console.WriteLine("Du är minderårig.");
+}</code></pre>
+    </section>
+
+    <section class="lesson-section menu">
+      <h2>Flera alternativ med else if</h2>
+      <p>Om du vill kontrollera flera olika alternativ, kan du använda <code>else if</code>:</p>
+      <pre><code>int poäng = 75;
+
+if (poäng >= 90) {
+    Console.WriteLine("Betyg: A");
+} else if (poäng >= 75) {
+    Console.WriteLine("Betyg: B");
+} else if (poäng >= 60) {
+    Console.WriteLine("Betyg: C");
+} else {
+    Console.WriteLine("Betyg: F");
+}</code></pre>
+    </section>
+
+    <section class="lesson-section menu">
+      <h2>Logiska operatorer</h2>
+      <p>Du kan kombinera flera villkor med <strong>logiska operatorer</strong>:</p>
+      <ul class="feature-list">
+        <li><code>==</code> – är lika med</li>
+        <li><code>!=</code> – är inte lika med</li>
+        <li><code>&&</code> – och (båda villkoren måste vara sanna)</li>
+        <li><code>||</code> – eller (något av villkoren måste vara sant)</li>
+        <li><code>!</code> – inte (vänder på ett villkor)</li>
+      </ul>
+      <pre><code>int ålder = 20;
+bool harLeg = true;
+
+if (ålder >= 18 && harLeg) {
+    Console.WriteLine("Du får gå in.");
+} else {
+    Console.WriteLine("Du får inte gå in.");
+}</code></pre>
+    </section>
+
+    <section class="lesson-section menu">
+      <h2>📝 Uppgifter: If-satser och logik</h2>
+      <div class="menu67">
+        <div class="menu54">
+          <h3>Uppgift 1: Körkort</h3>
+          <p>Be användaren skriva in sin ålder (använd en variabel) och kontrollera om personen är gammal nog att ta körkort (18 år).</p>
+        </div>
+
+        <div class="menu54">
+          <h3>Uppgift 2: Jämna eller udda tal</h3>
+          <p>Skapa ett program som kontrollerar om ett tal är jämnt eller udda.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="lesson-section menu">
+      <h2>Instruktionsvideo</h2>
+      <div class="video-container">
+        <div class="video-placeholder" style="padding: 20px; background-color: #333; border-radius: 12px; text-align: center;">
+          <video controls class="responsive-video">
+            <source src="Skärminspelning_2025-05-15_232712.mp4" type="video/mp4" />
+            Din webbläsare stödjer inte videouppspelning.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <div class="navigation-buttons" style="display: flex; justify-content: space-between; margin-top: 40px;">
+      <a href="lesson2.html" class="nav-button menu">← Förra Lektion</a>
+      <a href="lesson4.html" class="nav-button menu">Nästa Lektion →</a>
+    </div>
+  </main>
+
+  <footer style="text-align: center; padding: 20px; margin-top: 40px;">
+    <p>Skapad med ❤️ för att lära sig C#</p>
+    <p>© 2025 </p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instruktion</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style-responsive.css">
+  <style>
+    /* EXTRA RESPONSIVE TWEAKS */
+    .lesson-content {
+      padding: 20px;
+    }
+
+    h1, h2, h3, p {
+      word-wrap: break-word;
+    }
+
+    .menu54 pre {
+      overflow-x: auto;
+    }
+
+    @media (max-width: 450px) {
+      .nav-button {
+        font-size: 14px;
+        padding: 10px;
+      }
+
+      .menu77 {
+        flex-direction: column;
+      }
+
+      .menu54 {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      header h1 {
+        font-size: 1.3em;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-right: 0;
+      }
+
+      .navigation-buttons {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+    /* Responsive video styling */
+    .responsive-video {
+      width: 100%;
+      height: auto;
+      max-width: 800px;
+      display: block;
+      margin: 0 auto;
+      border-radius: 12px;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li class="dropdown">
+          <button class="dropdown-toggle">Instruktioner ▾</button>
+          <ul class="dropdown-content">
+            <li><a href="lesson1.html">Lektion 1</a></li>
+            <li><a href="lesson2.html">Lektion 2</a></li>
+            <li><a href="lesson3.html">Lektion 3</a></li>
+            <li><a href="lesson4.html">Lektion 1</a></li>
+            <li><a href="lesson5.html">Lektion 2</a></li>
+            <li><a href="lesson6.html">Lektion 3</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html">Hem</a></li>
+        <li><a href="upphövsrätt.html">Upphovsrätt</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggle = document.querySelector(".dropdown-toggle");
+      const dropdown = document.querySelector(".dropdown");
+
+      toggle.addEventListener("click", function (e) {
+        e.stopPropagation();
+        dropdown.classList.toggle("open");
+      });
+
+      // Stäng menyn om man klickar utanför
+      document.addEventListener("click", function () {
+        dropdown.classList.remove("open");
+      });
+    });
+  </script>
+
+  <main class="lesson-content meny-container">
+    <h1 class="text-grupp"><span style="color: #702670;">Lektion 1:</span> Introduktion till C#</h1>
+
+    <section class="lesson-section menu">
+      <h2>Vad är C#?</h2>
+      <p>C# (uttalas "C-sharp") är ett modernt, objektorienterat programmeringsspråk utvecklat av Microsoft. Det är en del av .NET-ramverket och kan användas för att skapa:</p>
+      <ul class="feature-list">
+        <li>Windows skrivbordsapplikationer</li>
+        <li>Webbapplikationer och tjänster</li>
+        <li>Mobilappar</li>
+        <li>Spel (med Unity)</li>
+        <li>Företagsmjukvara</li>
+      </ul>
+    </section>
+
+    <section class="lesson-section menu">
+      <h2>Varför lära sig C#?</h2>
+      <div class="menu77">
+        <div class="menu54">
+          <h3>Mångsidigt</h3>
+          <p>Skapa allt från webbappar till mobilspel</p>
+        </div>
+        <div class="menu54">
+          <h3>Efterfrågat</h3>
+          <p>Högt eftertraktat på arbetsmarknaden</p>
+        </div>
+        <div class="menu54">
+          <h3>Modernt</h3>
+          <p>Regelbundna uppdateringar med nya funktioner</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="lesson-section menu">
+      <h2>Kom igång med C#</h2>
+      <div class="menu67">
+        <div class="menu54">
+          <h3>Steg 1: Installera Visual Studio</h3>
+          <p>Ladda ner och installera Visual Studio Community Edition – det är gratis och innehåller allt du behöver för att börja koda i C#.</p>
+          <img src="Skärmbild_2025-04-14_104037.png" alt="Steg 1">
+        </div>
+        <div class="menu54">
+          <h3>Steg 2: Skapa ditt första projekt</h3>
+          <p>Öppna Visual Studio och skapa ett nytt "Console Application"-projekt.</p>
+          <img src="Skärmbild_2025-04-14_105208.png" alt="Steg 2">
+        </div>
+        <div class="menu54">
+          <h3>Steg 3: Skriv din första kod</h3>
+          <img src="Skärmbild_2025-04-14_110259.png" alt="Steg 3">
+        </div>
+      </div>
+    </section>
+
+    <section class="lesson-section menu">
+      <h2>Instruktionsvideo</h2>
+      <div class="video-container">
+        <div class="video-placeholder" style="padding: 20px; background-color: #333; border-radius: 12px; text-align: center;">
+          <video controls class="responsive-video">
+            <source src="Skärminspelning_2025-05-15_221118.mp4" type="video/mp4">
+            Din webbläsare stödjer inte videouppspelning.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <div class="navigation-buttons" style="display: flex; justify-content: space-between; margin-top: 40px;">
+      <a href="index.html" class="nav-button menu">← Tillbaka till Hem</a>
+      <a href="lesson2.html" class="nav-button menu">Nästa Lektion →</a>
+    </div>
+  </main>
+
+  <footer style="text-align: center; padding: 20px; margin-top: 40px;">
+    <p>Skapad med ❤️ för att lära sig C#</p>
+    <p>© 2025 </p>
+  </footer>
+</body>
+</html>

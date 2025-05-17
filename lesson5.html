@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instruktion</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-responsive.css">
+    <style>
+        .responsive-video {
+            width: 100%;
+            height: auto;
+            max-width: 800px;
+            display: block;
+            margin: 0 auto;
+            border-radius: 12px;
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="dropdown">
+                    <button class="dropdown-toggle">Instruktioner ▾</button>
+                    <ul class="dropdown-content">
+                        <li><a href="lesson1.html">Lektion 1</a></li>
+                        <li><a href="lesson2.html">Lektion 2</a></li>
+                        <li><a href="lesson3.html">Lektion 3</a></li>
+                        <li><a href="lesson4.html">Lektion 4</a></li>
+                        <li><a href="lesson5.html">Lektion 5</a></li>
+                        <li><a href="lesson6.html">Lektion 6</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html">Hem</a></li>
+                <li><a href="upphovsratt.html">Upphovsrätt</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggle = document.querySelector(".dropdown-toggle");
+            const dropdown = document.querySelector(".dropdown");
+
+            toggle.addEventListener("click", function (e) {
+                e.stopPropagation();
+                dropdown.classList.toggle("open");
+            });
+
+            document.addEventListener("click", function () {
+                dropdown.classList.remove("open");
+            });
+        });
+    </script>
+
+    <main class="lesson-content meny-container">
+        <h1 class="text-grupp"><span style="color: #702670;">Lektion 5:</span> Klasser och Objekt</h1>
+
+        <section class="lesson-section menu">
+            <h2>Objektorienterad programmering</h2>
+            <p>C# är ett objektorienterat programmeringsspråk, vilket innebär att det organiserar kod i objekt som innehåller både data (fält) och beteenden (metoder).</p>
+            <div class="menu67">
+                <div class="menu54">
+                    <h3>Grundläggande koncept</h3>
+                    <ul>
+                        <li><strong>Klass</strong> – En mall för att skapa objekt</li>
+                        <li><strong>Objekt</strong> – En instans av en klass</li>
+                        <li><strong>Fält</strong> – Variabler som tillhör en klass</li>
+                        <li><strong>Metoder</strong> – Funktioner som tillhör en klass</li>
+                        <li><strong>Konstruktor</strong> – Speciell metod som anropas när ett objekt skapas</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section menu">
+            <h2>Definiera en klass</h2>
+            <pre><code>public class Person
+{
+    // Fält (data)
+    public string Name;
+    public int Age;
+    private string _idNumber;
+    
+    // Konstruktor
+    public Person(string name, int age)
+    {
+        Name = name;
+        Age = age;
+        _idNumber = GenerateId();
+    }
+    
+    // Metoder (beteenden)
+    public void Introduce()
+    {
+        Console.WriteLine($"Hej, jag heter {Name} och är {Age} år gammal.");
+    }
+    
+    public void CelebrateBirthday()
+    {
+        Age++;
+        Console.WriteLine($"{Name} fyller nu {Age} år!");
+    }
+    
+    // Privat hjälpmetod
+    private string GenerateId()
+    {
+        return Guid.NewGuid().ToString().Substring(0, 8);
+    }
+}</code></pre>
+        </section>
+
+        <section class="lesson-section menu">
+            <h2>Skapa och använda objekt</h2>
+            <pre><code>// Skapa objekt (instanser av klassen)
+Person person1 = new Person("Anna", 28);
+Person person2 = new Person("Erik", 32);
+
+// Använda objektens metoder och fält
+person1.Introduce();  // Utskrift: Hej, jag heter Anna och är 28 år gammal.
+person2.Introduce();  // Utskrift: Hej, jag heter Erik och är 32 år gammal.
+
+// Ändra fält
+person1.Name = "Anna Andersson";
+person1.Introduce();  // Utskrift: Hej, jag heter Anna Andersson och är 28 år gammal.
+
+// Anropa metod
+person2.CelebrateBirthday();  // Utskrift: Erik fyller nu 33 år!</code></pre>
+        </section>
+
+        <section class="lesson-section menu">
+            <h2>Egenskaper (Properties)</h2>
+            <p>Egenskaper ger ett sätt att kontrollera åtkomst till klassens fält.</p>
+            <div class="menu67">
+                <div class="menu54">
+                    <h3>Exempel på egenskaper</h3>
+                    <pre><code>public class Student
+{
+    // Privat fält
+    private string _name;
+    private int _age;
+    
+    // Egenskap med get och set
+    public string Name
+    {
+        get { return _name; }
+        set { _name = value; }
+    }
+    
+    // Egenskap med validering
+    public int Age
+    {
+        get { return _age; }
+        set 
+        { 
+            if (value >= 0)
+                _age = value;
+            else
+                throw new ArgumentException("Ålder kan inte vara negativ");
+        }
+    }
+    
+    // Automatisk egenskap
+    public string School { get; set; }
+    
+    // Egenskap med endast get
+    public bool IsAdult
+    {
+        get { return _age >= 18; }
+    }
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section menu">
+            <h2>📝 Uppgifter: Klasser och Objekt</h2>
+            <div class="menu67">
+                <div class="menu54">
+                    <h3>Uppgift 1: Skapa en Book-klass</h3>
+                    <p>Skapa en klass som representerar en bok med följande egenskaper:</p>
+                    <ul>
+                        <li>Titel</li>
+                        <li>Författare</li>
+                        <li>Antal sidor</li>
+                        <li>Utgivningsår</li>
+                    </ul>
+                    <p>Lägg till en metod som skriver ut information om boken och en metod som beräknar bokens ålder.</p>
+                </div>
+                <div class="menu54">
+                    <h3>Uppgift 2: Bankkonto</h3>
+                    <p>Skapa en klass som representerar ett bankkonto med följande funktionalitet:</p>
+                    <ul>
+                        <li>Kontonummer (read-only)</li>
+                        <li>Saldo (read-only)</li>
+                        <li>Metod för insättning</li>
+                        <li>Metod för uttag (med kontroll att det finns tillräckligt med pengar)</li>
+                        <li>Metod för att visa kontoinformation</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section menu">
+            <h2>Instruktionsvideo</h2>
+            <div class="video-container">
+                <div class="video-placeholder" style="padding: 20px; background-color: #333; border-radius: 12px; text-align: center;">
+                    <video controls class="responsive-video">
+                        <source src="Skärminspelning_2025-05-17_130644.mp4" type="video/mp4">
+                        Din webbläsare stödjer inte videouppspelning.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <div class="navigation-buttons" style="display: flex; justify-content: space-between; margin-top: 40px;">
+            <a href="lesson4.html" class="nav-button menu">←Förra Lektion</a>
+            <a href="lesson6.html" class="nav-button menu">Nästa Lektion →</a>
+        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 20px; margin-top: 40px;">
+        <p>Skapad med ❤️ för att lära sig C#</p>
+        <p>© 2025 </p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - C# Lärande</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-responsive.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="dropdown">
+                    <button class="dropdown-toggle">Instruktioner ▾</button>
+                    <ul class="dropdown-content">
+                        <li><a href="lesson1.html">Lektion 1</a></li>
+                        <li><a href="lesson2.html">Lektion 2</a></li>
+                        <li><a href="lesson3.html">Lektion 3</a></li>
+                        <li><a href="lesson4.html">Lektion 4</a></li>
+                        <li><a href="lesson5.html">Lektion 5</a></li>
+                        <li><a href="lesson6.html">Lektion 6</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html">Hem</a></li>
+                <li><a href="upphovsratt.html">Upphovsrätt</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggle = document.querySelector(".dropdown-toggle");
+            const dropdown = document.querySelector(".dropdown");
+
+            toggle.addEventListener("click", function (e) {
+                e.stopPropagation();
+                dropdown.classList.toggle("open");
+            });
+
+            // Stäng menyn om man klickar utanför
+            document.addEventListener("click", function () {
+                dropdown.classList.remove("open");
+            });
+        });
+    </script>
+
+    <main class="lesson-content meny-container">
+        <h1 class="text-grupp"><span style="color: #702670;">Kontakta oss</span></h1>
+
+        <section class="lesson-section menu">
+            <h2>Har du frågor eller funderingar?</h2>
+            <p>Vi hjälper dig gärna med frågor om våra kurser, teknisk support eller andra ärenden. Fyll i formuläret nedan så återkommer vi så snart som möjligt.</p>
+            
+            <div class="menu67">
+                <div class="menu54">
+                    <form action="#" method="post">
+                        <div style="margin-bottom: 15px;">
+                            <label for="name" style="color: black;">Namn:</label>
+                            <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; margin-top: 5px; border-radius: 5px; border: 1px solid #444; background-color: #333; color: white;">
+                        </div>
+                        
+                        <div style="margin-bottom: 15px;">
+                            <label for="email"  style="color: black;">E-post:</label>
+                            <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; margin-top: 5px; border-radius: 5px; border: 1px solid #444; background-color: #333; color: white;">
+                        </div>
+                        
+                        <div style="margin-bottom: 15px;">
+                            <label for="subject"  style="color: black;">Ämne:</label>
+                            <select id="subject" name="subject" style="width: 100%; padding: 10px; margin-top: 5px; border-radius: 5px; border: 1px solid #444; background-color: #333; color: white;">
+                                <option value="question">Fråga om kurser</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="support">Teknisk support</option>
+                                <option value="other">Annat</option>
+                            </select>
+                        </div>
+                        
+                        <div style="margin-bottom: 15px;">
+                            <label for="message"  style="color: black;">Meddelande:</label>
+                            <textarea id="message" name="message" required style="width: 100%; padding: 10px; margin-top: 5px; border-radius: 5px; border: 1px solid #444; background-color: #333; color: white; min-height: 150px;"></textarea>
+                        </div>
+                        
+                        <button type="submit" style="background-color: #702670; color: white; border: none; padding: 12px 24px; border-radius: 5px; cursor: pointer; font-size: 16px;">Skicka meddelande</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section menu">
+            <h2>Kontaktinformation</h2>
+            <div class="menu67">
+                <div class="menu54">
+                    <h3>E-post</h3>
+                    <p>info@chinon.se</p>
+                </div>
+                
+                <div class="menu54">
+                    <h3>Telefon</h3>
+                    <p>08-123 45 67</p>
+                </div>
+                
+                <div class="menu54">
+                    <h3>Adress</h3>
+                    <p>Programmeringsvägen 42<br>123 45 Stockholm</p>
+                </div>
+                
+                <div class="menu54">
+                    <h3>Öppettider</h3>
+                    <p>Måndag-Fredag: 09:00-17:00</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="text-align: center; padding: 20px; margin-top: 40px;">
+        <p>Skapad med ❤️ för att lära sig C#</p>
+        <p>© 2025 </p>
+    </footer>
+</body>
+</html>

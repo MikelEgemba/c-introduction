@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instruktion</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-responsive.css">
+    <style>
+        .responsive-video {
+            width: 100%;
+            height: auto;
+            max-width: 800px;
+            display: block;
+            margin: 0 auto;
+            border-radius: 12px;
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="dropdown">
+                    <button class="dropdown-toggle">Instruktioner ▾</button>
+                    <ul class="dropdown-content">
+                        <li><a href="lesson1.html">Lektion 1</a></li>
+                        <li><a href="lesson2.html">Lektion 2</a></li>
+                        <li><a href="lesson3.html">Lektion 3</a></li>
+                        <li><a href="lesson4.html">Lektion 4</a></li>
+                        <li><a href="lesson5.html">Lektion 5</a></li>
+                        <li><a href="lesson6.html">Lektion 6</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html">Hem</a></li>
+                <li><a href="upphovsratt.html">Upphovsrätt</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggle = document.querySelector(".dropdown-toggle");
+            const dropdown = document.querySelector(".dropdown");
+
+            toggle.addEventListener("click", function (e) {
+                e.stopPropagation();
+                dropdown.classList.toggle("open");
+            });
+
+            document.addEventListener("click", function () {
+                dropdown.classList.remove("open");
+            });
+        });
+    </script>
+
+    <main class="lesson-content meny-container">
+        <h1 class="text-grupp"><span style="color: #702670;">Lektion 4:</span> Metoder och Funktioner</h1>
+
+        <section class="lesson-section menu">
+            <h2>Vad är metoder?</h2>
+            <p>Metoder är block av kod som utför specifika uppgifter. De hjälper till att organisera kod, förhindra upprepning och göra koden mer läsbar och underhållbar.</p>
+            <div class="menu67">
+                <div class="menu54">
+                    <h3>Fördelar med metoder</h3>
+                    <ul>
+                        <li>Återanvändbar kod</li>
+                        <li>Bättre organisation</li>
+                        <li>Enklare felsökning</li>
+                        <li>Mer läsbar kod</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section menu">
+            <h2>Definiera metoder</h2>
+            <div class="menu67">
+                <div class="menu54">
+                    <h3>Grundläggande metod utan returvärde</h3>
+                    <pre><code>static void SayHello()
+{
+    Console.WriteLine("Hej världen!");
+}</code></pre>
+                </div>
+                <div class="menu54">
+                    <h3>Metod med parametrar</h3>
+                    <pre><code>static void Greet(string name)
+{
+    Console.WriteLine($"Hej {name}!");
+}</code></pre>
+                </div>
+                <div class="menu54">
+                    <h3>Metod med returvärde</h3>
+                    <pre><code>static int Add(int a, int b)
+{
+    return a + b;
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section menu">
+            <h2>Anropa metoder</h2>
+            <pre><code>// Anropa metoder
+SayHello();  // Utskrift: Hej världen!
+
+Greet("Anna");  // Utskrift: Hej Anna!
+
+int sum = Add(5, 3);  // sum = 8
+Console.WriteLine($"Summan är: {sum}");</code></pre>
+        </section>
+
+        <section class="lesson-section menu">
+            <h2>Parametrar</h2>
+            <div class="menu67">
+                <div class="menu54">
+                    <h3>Värde- och referensparametrar</h3>
+                    <pre><code>// Värdeparameter (standard)
+static void IncrementValue(int x)
+{
+    x++;  // Ändrar bara den lokala kopian
+}
+
+// Referensparameter med ref-nyckelordet
+static void IncrementReference(ref int x)
+{
+    x++;  // Ändrar originalvariabeln
+}
+
+int a = 5;
+IncrementValue(a);  // a är fortfarande 5
+IncrementReference(ref a);  // a är nu 6</code></pre>
+                </div>
+                <div class="menu54">
+                    <h3>Utparametrar</h3>
+                    <pre><code>// Metod med utparameter
+static bool TryParse(string input, out int result)
+{
+    if (int.TryParse(input, out result))
+    {
+        return true;
+    }
+    result = 0;
+    return false;
+}
+
+string userInput = "42";
+int number;
+if (TryParse(userInput, out number))
+{
+    Console.WriteLine($"Parsning lyckades: {number}");
+}
+else
+{
+    Console.WriteLine("Parsning misslyckades");
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section menu">
+            <h2>📝 Uppgifter: Metoder</h2>
+            <div class="menu67">
+                <div class="menu54">
+                    <h3>Uppgift 1: Skapa en räknare</h3>
+                    <p>Skapa fyra metoder för grundläggande matematiska operationer:</p>
+                    <ul>
+                        <li>Add(a, b) - returnerar summan</li>
+                        <li>Subtract(a, b) - returnerar skillnaden</li>
+                        <li>Multiply(a, b) - returnerar produkten</li>
+                        <li>Divide(a, b) - returnerar kvoten</li>
+                    </ul>
+                    <p>Anropa sedan metoderna med olika värden och skriv ut resultaten.</p>
+                </div>
+                <div class="menu54">
+                    <h3>Uppgift 2: Temperaturomvandlare</h3>
+                    <p>Skapa två metoder:</p>
+                    <ul>
+                        <li>CelsiusToFahrenheit(celsius) - konverterar från Celsius till Fahrenheit</li>
+                        <li>FahrenheitToCelsius(fahrenheit) - konverterar från Fahrenheit till Celsius</li>
+                    </ul>
+                    <p>Formel: F = C * 9/5 + 32</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section menu">
+            <h2>Instruktionsvideo</h2>
+            <div class="video-container">
+                <div class="video-placeholder" style="padding: 20px; background-color: #333; border-radius: 12px; text-align: center;">
+                    <video controls class="responsive-video">
+                        <source src="Skärminspelning_2025-05-17_125506.mp4" type="video/mp4">
+                        Din webbläsare stödjer inte videouppspelning.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <div class="navigation-buttons" style="display: flex; justify-content: space-between; margin-top: 40px;">
+            <a href="lesson3.html" class="nav-button menu">←Förra Lektion</a>
+            <a href="lesson5.html" class="nav-button menu">Nästa Lektion →</a>
+        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 20px; margin-top: 40px;">
+        <p>Skapad med ❤️ för att lära sig C#</p>
+        <p>© 2025 </p>
+    </footer>
+</body>
+</html>
