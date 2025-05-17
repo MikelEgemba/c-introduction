@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upphovsrätt - C# Lärande</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-responsive.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="dropdown">
+                    <button class="dropdown-toggle">Instruktioner ▾</button>
+                    <ul class="dropdown-content">
+                        <li><a href="lesson1.html">Lektion 1</a></li>
+                        <li><a href="lesson2.html">Lektion 2</a></li>
+                        <li><a href="lesson3.html">Lektion 3</a></li>
+                        <li><a href="lesson4.html">Lektion 4</a></li>
+                        <li><a href="lesson5.html">Lektion 5</a></li>
+                        <li><a href="lesson6.html">Lektion 6</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html">Hem</a></li>
+                <li><a href="upphovsratt.html">Upphovsrätt</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggle = document.querySelector(".dropdown-toggle");
+            const dropdown = document.querySelector(".dropdown");
+
+            toggle.addEventListener("click", function (e) {
+                e.stopPropagation();
+                dropdown.classList.toggle("open");
+            });
+
+            // Stäng menyn om man klickar utanför
+            document.addEventListener("click", function () {
+                dropdown.classList.remove("open");
+            });
+        });
+    </script>
+
+    <main class="lesson-content meny-container">
+        <h1 class="text-grupp"><span style="color: #702670;">Upphovsrätt</span></h1>
+
+        <section class="lesson-section menu">
+            <h2>Upphovsrättsinformation</h2>
+            <p>Allt material på denna webbplats, inklusive text, bilder, kod och videor, är skyddat av upphovsrätt och tillhör Chinon om inget annat anges.</p>
+            
+            <h3>Användning av material</h3>
+            <p>Du får använda materialet på denna webbplats för personligt bruk och lärande. Du får:</p>
+            <ul>
+                <li>Läsa och studera allt material på webbplatsen</li>
+                <li>Kopiera kodexempel för användning i dina egna projekt</li>
+                <li>Dela länkar till våra sidor med andra</li>
+            </ul>
+            
+            <p>Du får inte:</p>
+            <ul>
+                <li>Reproducera eller distribuera större delar av materialet i kommersiellt syfte</li>
+                <li>Presentera materialet som ditt eget</li>
+                <li>Sälja eller licensiera materialet till tredje part</li>
+            </ul>
+        </section>
+
+        <section class="lesson-section menu">
+            <h2>Tredjepartsmaterial</h2>
+            <p>Vissa delar av webbplatsen kan innehålla material från tredje part, såsom:</p>
+            <ul>
+                <li>Bilder och ikoner</li>
+                <li>Kodbibliotek och ramverk</li>
+                <li>Externa verktyg och resurser</li>
+            </ul>
+            <p>Vi strävar efter att korrekt attribuera allt sådant material till dess respektive ägare. Om du anser att något material på denna webbplats kränker din upphovsrätt, vänligen kontakta oss så att vi kan åtgärda situationen.</p>
+        </section>
+
+        <section class="lesson-section menu">
+            <h2>Microsoft och C#</h2>
+            <p>C# är ett programmeringsspråk utvecklat av Microsoft. Microsoft, C#, .NET och relaterade namn och logotyper är varumärken som tillhör Microsoft Corporation. Denna webbplats är inte ansluten till eller godkänd av Microsoft Corporation.</p>
+            
+            <h3>Kontakt</h3>
+            <p>Om du har frågor om upphovsrätt eller användning av material från denna webbplats, vänligen kontakta oss via vår <a href="kontakt.html" style="color: #702670;">kontaktsida</a>.</p>
+        </section>
+    </main>
+
+    <footer style="text-align: center; padding: 20px; margin-top: 40px;">
+        <p>Skapad med ❤️ för att lära sig C#</p>
+        <p>© 2025 Chinon</p>
+    </footer>
+</body>
+</html>

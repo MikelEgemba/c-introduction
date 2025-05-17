@@ -1,0 +1,158 @@
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-right: 0;
+        padding: 10px;
+    }
+    
+    nav ul li {
+        margin-bottom: 5px;
+    }
+    
+    .container1 {
+        margin: 10px;
+    }
+    
+    .text-grupp h1 {
+        font-size: 1.8em;
+    }
+    
+    .text-grupp h2 {
+        font-size: 1.2em;
+    }
+    
+    .menu-container {
+        flex-direction: column;
+    }
+    
+    .menu {
+        padding: 15px;
+        border-radius: 25px;
+        margin-bottom: 15px;
+    }
+    
+    .navigation-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .nav-button {
+        width: 100%;
+        margin: 5px 0;
+    }
+    
+    input, select, textarea {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        height: auto;
+        padding: 10px 0;
+    }
+    
+    .dropdown-content {
+        position: static;
+        width: 100%;
+    }
+    
+    .foto {
+        max-width: 80%;
+        height: auto;
+    }
+    
+    .foto3 {
+        width: 60px;
+    }
+    
+    h1 {
+        font-size: 1.5em;
+    }
+    
+    h2 {
+        font-size: 1.3em;
+    }
+    
+    h3 {
+        font-size: 1.1em;
+    }
+    
+    pre {
+        font-size: 0.8em;
+        padding: 10px;
+        overflow-x: auto;
+    }
+    
+    .menu54 {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dropdown.open .dropdown-content {
+        display: block;
+        width: 100%;
+        position: static;
+        background-color: #333;
+        padding: 0;
+    }
+    
+    .dropdown-toggle {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+    }
+}
+
+.menu54 pre {
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+form div {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .menu67 {
+        padding: 10px;
+    }
+    
+    .menu77 {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        overflow-x: visible;
+    }
+    
+    .menu54 {
+        flex: 1;
+        max-width: 100%;
+        margin-bottom: 15px;
+    }
+}
+
+.lesson-content {
+    padding: 15px;
+}
+
+.lesson-section {
+    margin-bottom: 20px;
+}
+
+.feature-list {
+    padding-left: 20px;
+}
+
+h1, h2, h3, p, li {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}

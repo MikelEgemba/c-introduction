@@ -1,0 +1,648 @@
+/* Base styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #212122;
+    color: white;
+    min-height: 100vh;
+    font-family: sans-serif;
+}
+
+/* Header / Banner */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertical centering */
+    align-items: center;     /* Horizontal centering */
+    height: 90px;           /* Adjust as needed */
+    background-color: black; /* You can add a gradient or image if you like */
+    position: relative;
+}
+
+/* Rubriken (h1) */
+header h1 {
+    margin: 0;
+    color: white; /* Changed from black for contrast on black bg */
+    font-size: 1.8em;
+}
+
+/* Navigationsmeny */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 50px;
+    justify-content: flex-start;  /* Align links to the left */
+    align-items: center;         /* Align vertically */
+    height: 100%;                 /* Fill banner height */
+    margin-left: auto;            /* This pushes the ul to the right */
+    margin-right: 100px;
+}
+
+nav ul li {
+    margin-bottom: 0; 
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: 0.3s ease-out;
+}
+
+nav ul li a:hover {
+    color: #702670;
+    font-size: 1.5em;
+}
+
+.foto {
+    margin-right: 0;
+    animation: slideInFromBottom 1s ease-out; /* Animationens namn, varaktighet och timing-funktion */
+    animation-delay: 0.5s; /* Fördröjning innan animationen börjar */
+    animation-fill-mode: forwards; 
+    opacity: 0; /* Bilden är initialt osynlig */
+}
+  
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%); /* Starta nedanför vyn */
+        opacity: 0; /* Fullt genomskinlig */
+    }
+    100% {
+        transform: translateY(0); /* Sluta på sin ursprungliga position */
+        opacity: 1; /* Helt synlig */
+    }
+}
+
+.container1 {
+    text-align: center;
+    margin: 20px;
+}
+
+.text-grupp h1 {
+    margin-top: 0;
+    color: #702670;
+}
+
+.meny-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+  
+.menu {
+    padding: 20px;
+    border-radius: 50px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    background-color: #702670;
+    color: white;
+    transition: transform 0.3s ease;
+}
+  
+/* Optional: Add a little hover effect for fun */
+.menu:hover {
+    transform: scale(1.02);
+}
+  
+/* Make images scale nicely */
+.foto3 {
+    width: 100px;
+    height: auto;
+}
+  
+/* Responsive text */
+.menu h3 {
+    font-size: 1.1rem;
+}
+  
+/* RESPONSIVE MEDIA QUERY */
+@media (min-width: 768px) {
+    .menu {
+        font-size: 1.2rem;
+    }
+    .menu h3 {
+        font-size: 1.3rem;
+    }
+}
+
+.menu67 {
+    padding: 20px;
+    overflow: hidden;
+}
+  
+.menu77 {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 20px;
+}
+  
+.menu54 {
+    flex: 0 0 90%;
+    max-width: 90%;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    padding: 20px;
+    scroll-snap-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+  
+.avatar {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+  
+/* Text */
+.menu54 h3 {
+    color: #212122;
+    font-weight: bold;
+    font-size: 20px;
+}
+  
+.menu54 h4 {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+  
+.menu54 p {
+    font-size: 0.95rem;
+    margin-top: 10px;
+    color: #333;
+}
+  
+/* DESKTOP VIEW – Grid layout */
+@media (min-width: 768px) {
+    .menu77 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: 20px;
+        overflow: visible;
+    }
+  
+    .menu54 {
+        max-width: 100%;
+        flex: unset;
+        scroll-snap-align: unset;
+    }
+}
+  
+/* Make the dropdown menu visible when it's toggled */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    padding: 10px 0;
+    border-radius: 6px;
+    list-style: none;
+    margin: 0;
+    z-index: 1000;
+    background-color: #333; /* Added background color for dropdown */
+}
+
+/* Style the links inside the dropdown */
+.dropdown-content li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white; /* Text color white for all links */
+    border-bottom: 1px solid #fff; /* Divide the links */
+}
+
+/* Hover effect for the links */
+.dropdown-content li a:hover {
+    background-color: #5a1e52;
+    color: white; /* Darken the background on hover */
+}
+
+/* Show the dropdown when toggled */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown.open .dropdown-content {
+    display: block;
+}
+
+/* Dropdown button style */
+.dropdown-toggle {
+    background: none;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    color: white;
+}
+
+/* Remove the border for the last link */
+.dropdown-content li:last-child a {
+    border-bottom: none;
+}
+
+.menu54 img {
+    width: 500px;
+    max-width: 100%;
+}
+
+@media (max-width: 430px) {
+    .menu54 img {
+        width: 90%;
+    }
+}
+
+/* Lesson specific styles */
+.lesson-content {
+    padding: 20px;
+}
+
+.lesson-section {
+    margin-bottom: 30px;
+}
+
+.feature-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.feature-list li {
+    margin-bottom: 5px;
+}
+
+.video-container {
+    margin: 20px 0;
+}
+
+.nav-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #702670;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #5a1e52;
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+/* Code styling */
+pre {
+    background-color: #1e1e1e;
+    color: #f8f8f8;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-family: monospace;
+    margin: 15px 0;
+}
+
+code {
+    font-family: monospace;
+    background-color: #333;
+    color: #f8f8f8;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+/* Contact form styling */
+form input, form select, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #333;
+    color: white;
+    font-family: inherit;
+}
+
+form button {
+    background-color: #702670;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #5a1e52;
+}
+
+/* ENHANCED RESPONSIVE STYLES */
+
+/* Base responsive adjustments */
+@media (max-width: 768px) {
+    /* Navigation adjustments */
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-right: 0;
+        padding: 10px;
+    }
+    
+    nav ul li {
+        margin-bottom: 5px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Container adjustments */
+    .container1 {
+        margin: 10px;
+    }
+    
+    /* Text adjustments */
+    .text-grupp h1 {
+        font-size: 1.8em;
+    }
+    
+    .text-grupp h2 {
+        font-size: 1.2em;
+    }
+    
+    /* Menu container adjustments */
+    .menu-container {
+        flex-direction: column;
+    }
+    
+    /* Menu adjustments */
+    .menu {
+        padding: 15px;
+        border-radius: 25px;
+        margin-bottom: 15px;
+    }
+    
+    /* Navigation buttons */
+    .navigation-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .nav-button {
+        width: 100%;
+        margin: 5px 0;
+        text-align: center;
+    }
+    
+    /* Form elements */
+    input, select, textarea {
+        width: 100% !important;
+    }
+    
+    /* Header adjustments */
+    header {
+        padding: 10px 0;
+    }
+}
+
+/* Small mobile adjustments */
+@media (max-width: 480px) {
+    /* Header adjustments */
+    header {
+        height: auto;
+        padding: 10px 0;
+    }
+    
+    /* Dropdown menu */
+    .dropdown-content {
+        position: static;
+        width: 100%;
+    }
+    
+    /* Images */
+    .foto {
+        max-width: 80%;
+        height: auto;
+    }
+    
+    .foto3 {
+        width: 60px;
+    }
+    
+    /* Text adjustments */
+    h1 {
+        font-size: 1.5em;
+    }
+    
+    h2 {
+        font-size: 1.3em;
+    }
+    
+    h3 {
+        font-size: 1.1em;
+    }
+    
+    /* Code blocks */
+    pre {
+        font-size: 0.8em;
+        padding: 10px;
+        overflow-x: auto;
+    }
+    
+    /* Menu cards */
+    .menu54 {
+        padding: 15px;
+    }
+}
+
+/* Fix for dropdown menu on mobile */
+@media (max-width: 768px) {
+    .dropdown.open .dropdown-content {
+        display: block;
+        width: 100%;
+        position: static;
+        background-color: #333;
+        padding: 0;
+    }
+    
+    .dropdown-toggle {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+    }
+}
+
+/* Ensure code examples are scrollable on small screens */
+.menu54 pre {
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Make sure images don't overflow their containers */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Improve form responsiveness */
+form div {
+    width: 100%;
+}
+
+/* Fix for menu67 and menu77 on mobile */
+@media (max-width: 768px) {
+    .menu67 {
+        padding: 10px;
+    }
+    
+    .menu77 {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        overflow-x: visible;
+    }
+    
+    .menu54 {
+        flex: 1;
+        max-width: 100%;
+        margin-bottom: 15px;
+    }
+}
+
+/* Ensure proper spacing in lesson content */
+.lesson-content {
+    padding: 15px;
+}
+
+.lesson-section {
+    margin-bottom: 20px;
+}
+
+/* Fix for feature lists on mobile */
+.feature-list {
+    padding-left: 20px;
+}
+
+/* Ensure proper text wrapping */
+h1, h2, h3, p, li {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Fix for the index page layout on mobile */
+@media (max-width: 768px) {
+    .menu-container {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .meny1, .meny2, .meny4 {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .text5, .text6, .text7 {
+        padding: 10px;
+    }
+    
+    .text2 {
+        padding: 0 15px;
+    }
+}
+
+/* Additional responsive fixes for all pages */
+@media (max-width: 768px) {
+    /* Fix for the header on all pages */
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+    }
+    
+    /* Fix for the navigation on all pages */
+    nav {
+        width: 100%;
+    }
+    
+    /* Fix for the dropdown menu */
+    .dropdown {
+        position: relative;
+        width: 100%;
+    }
+    
+    /* Fix for the lesson content */
+    .lesson-content {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    
+    /* Fix for the code blocks */
+    pre code {
+        white-space: pre-wrap;
+    }
+    
+    /* Fix for the contact form */
+    form {
+        width: 100%;
+    }
+}
+
+/* Ensure all interactive elements are large enough for touch on mobile */
+@media (max-width: 768px) {
+    button, 
+    .nav-button, 
+    input[type="submit"], 
+    .dropdown-toggle, 
+    .dropdown-content li a {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Fix for the lesson navigation on mobile */
+@media (max-width: 768px) {
+    .navigation-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .navigation-buttons a {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+}
+
+/* Ensure proper spacing for all content */
+.lesson-section, 
+.menu, 
+.menu54, 
+section {
+    box-sizing: border-box;
+}
+
+/* Fix for the footer on mobile */
+@media (max-width: 768px) {
+    footer {
+        padding: 15px;
+        text-align: center;
+    }
+}
